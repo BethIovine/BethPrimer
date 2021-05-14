@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main() {
+int main_1_16() {
     int sum = 0, val = 0;
 
     cout << "Enter numbers continuously:";
