@@ -25,7 +25,7 @@ public:
 
     Sales_data_ch7(const string &isbn, unsigned n, double p) : bookNo(isbn), unit_sold(n), revenue(n * p) {};
 
-    Sales_data_ch7(istream &is) { read(is, *this); }
+    Sales_data_ch7(istream &is = cin) { read(is, *this); }
 
     string isbn() {
         return bookNo;
@@ -33,6 +33,8 @@ public:
 
     Sales_data_ch7 &combine(const Sales_data_ch7 &);
 
+private:
+    inline double avg_price() const;
 
     string bookNo;
     unsigned unit_sold = 0;
