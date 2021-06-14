@@ -6,17 +6,17 @@ using namespace std;
 
 int main_7_3() {
     Sales_data_ch7 total;
-    if (cin >> total.bookNo >> total.unit_sold >> total.revenue) {
+    if (read(cin, total)) {
         Sales_data_ch7 trans;
-        while (cin >> trans.bookNo >> trans.unit_sold >> trans.revenue) {
+        while (read(cin, trans)) {
             if (total.isbn() == trans.isbn())
                 total.combine(trans);
             else {
-                cout << total.bookNo << " " << total.unit_sold << " " << total.revenue << endl;
+                print(cout, total);
                 total = trans;
             }
         }
-        cout << total.bookNo << " " << total.unit_sold << " " << total.revenue << endl;
+        print(cout, total);
     } else {
         std::cerr << "No data?!" << std::endl;
         return -1;

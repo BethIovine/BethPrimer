@@ -17,7 +17,7 @@ istream &read(istream &is, Sales_data_ch7 &item) {
 }
 
 ostream &print(ostream &os, const Sales_data_ch7 &item) {
-    os << item.bookNo << "  " << item.unit_sold << "  " << item.revenue;
+    os << item.bookNo << "  " << item.unit_sold << "  " << item.revenue << endl;
     return os;
 }
 
@@ -32,6 +32,8 @@ Sales_data_ch7 add(const Sales_data_ch7 &item1, const Sales_data_ch7 &item2) {
 inline double Sales_data_ch7::avg_price() const {
     return unit_sold ? (revenue / unit_sold) : 0;
 }
+
+
 //Sales_data_ch7::Sales_data_ch7(istream &is) {
 //    read(is, *this);
 //}
