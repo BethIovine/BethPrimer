@@ -28,9 +28,13 @@ public:
 
     ConstStrBlobPtr cend() const;
 
-    StrBlob() : data(make_shared<vector<string>>()) {};
+    StrBlob() : data(make_shared<vector<string>>()) {}
 
-    StrBlob(initializer_list<string> il) : data(make_shared<vector<string>>(il)) {};
+    StrBlob(initializer_list<string> il) : data(make_shared<vector<string>>(il)) {}
+
+    StrBlob(const StrBlob &sb) : data(make_shared<vector<string>>(*sb.data)) {}
+
+    StrBlob &operator=(const StrBlob &sb);
 
     size_type size() const { return data->size(); }
 

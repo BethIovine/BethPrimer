@@ -15,3 +15,8 @@ ConstStrBlobPtr StrBlob::cbegin() const {
 ConstStrBlobPtr StrBlob::cend() const {
     return ConstStrBlobPtr(*this, data->size());
 }
+
+StrBlob &StrBlob::operator=(const StrBlob &sb) {
+    data = make_shared<vector<string>>(*sb.data);
+    return *this;
+}
